@@ -1,0 +1,22 @@
+@page
+
+<div style="margin-top: 30px;">
+    <form method="post">
+        <div>Name: <input name="name"/></div>
+        <div>
+            <input type="submit"/>
+        </div>
+    </form>
+</div>
+
+@if (Request.Method == "POST")
+{
+    var name = Request.Form["name"];
+
+    <div>
+        @if (!string.IsNullOrEmpty(name))
+        {
+            <p>Hello @name!</p>
+        }
+    </div>
+}

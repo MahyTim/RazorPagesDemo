@@ -1,0 +1,10 @@
+@model string
+@{
+    var targetId = $"asynctarget_{Guid.NewGuid()}";
+}
+<div id="@targetId">Loading...</div>
+<script>
+    fetch('@Model')
+        .then(x => x.text())
+        .then(x => document.getElementById('@targetId').innerHTML = x);    
+</script>

@@ -1,0 +1,84 @@
+@page
+@using System.ComponentModel.DataAnnotations
+@{
+    @functions
+    {
+        [BindProperty]
+        [Required]
+        public string Name { get; set; }
+        [BindProperty]
+        public string CountryCode { get; set; } = "FR";
+        public SelectListItem[] Countries { get; } = new[]
+        {
+            new SelectListItem("Belgium", "BE"),
+            new SelectListItem("France", "FR"),
+            new SelectListItem("Germany", "DE")
+        };
+    }
+}
+<h3>
+    Forms
+</h3>
+<form method="post">
+    <input asp-for="Name"/>
+    <span asp-validation-for="Name"></span>
+    <select asp-for="CountryCode" asp-items="Countries"></select>
+    <button type="submit">Save</button>
+</form>
+
+
+
+
+
+
+
+
+
+<h3 givemesomeroom>
+    Partial views
+</h3>
+
+<partial name="../PartialViews/MyPartial.cshtml" />
+
+
+
+
+
+
+
+
+
+<h3 givemesomeroom>
+    Components
+</h3>
+
+<vc:async-page url="@Url.Page("../ComponentSample/SlowPage")"></vc:async-page>
+
+
+
+
+
+
+
+
+
+<h3 givemesomeroom>
+    Custom tags
+</h3>
+
+<email hide-email="true">glenn.dierckx@infosupport.com</email>
+<email>tim.mahy@infosupport.com</email>
+
+
+
+
+
+
+
+
+
+<h3 givemesomeroom>
+    Custom attributes
+</h3>
+
+<h4 jaren90>Dit was echt de shit</h4>

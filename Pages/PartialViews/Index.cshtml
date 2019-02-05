@@ -1,0 +1,8 @@
+@page
+@model RazorPagesDemo.Pages.PartialViews.Index
+
+Hello
+
+@await Html.PartialAsync("MyPartial")
+
+@await Html.PartialAsync("MyPersonPartial", Model.Person)

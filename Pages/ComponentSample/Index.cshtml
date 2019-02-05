@@ -1,0 +1,8 @@
+@page
+
+<div>
+    @await Component.InvokeAsync("AsyncPage", new
+    {
+        Url = Url.Page("SlowPage")
+    })
+</div>

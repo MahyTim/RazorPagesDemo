@@ -1,24 +1,17 @@
 @page
 
-@if (Request.Method == "GET")
-{
-    <div style="margin-top: 30px;">
-        <form method="post">
-            <div>Name: <input name="name"/></div>
-            <div>
-                <input type="submit"/>
-            </div>
-        </form>
-    </div>
+@functions {
+    [BindProperty]
+    public string Name { get; set; }
 }
-else if (Request.Method == "POST")
-{
-    var name = Request.Form["name"];
 
-    <div>
-        @if (!string.IsNullOrEmpty(name))
-        {
-            <p>Hello @name!</p>
-        }
-    </div>
-}
+<div style="margin-top:30px;">
+    <form method="post">
+        <div>Name: <input name="name" /></div>
+        <div><input type="submit" /></div>
+    </form>
+    @if (!string.IsNullOrEmpty(Name))
+    {
+        <p>Hello @Name!</p>
+    }
+</div>

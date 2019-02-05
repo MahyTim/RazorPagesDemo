@@ -11,7 +11,6 @@ namespace RazorPagesDemo.Pages
     {
         public void OnGet()
         {
-
         }
     }
 }

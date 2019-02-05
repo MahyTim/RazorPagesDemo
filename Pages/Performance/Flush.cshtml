@@ -1,0 +1,12 @@
+@page
+@model RazorPagesDemo.Pages.Performance.Flush
+
+@{
+    Layout = null;
+}
+
+@foreach (var x in Model.GetStreamingData())
+{
+    @x
+    <hr />
+}
